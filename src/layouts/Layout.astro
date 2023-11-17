@@ -1,5 +1,5 @@
 ---
-import AsideMenu from "../components/AsideMenu.astro"
+import AsideMenu from "../components/AsideMenu.astro";
 
 interface Props {
 	title: string;
@@ -24,14 +24,14 @@ const { title } = Astro.props;
 				<AsideMenu />
 			</aside>
 
-      <main class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full">
-        <slot />
-				MAIN
-      </main>
+			<main
+				class="[grid-area:main] rounded-lg bg-zinc-900 overflow-y-auto w-full"
+			>
+				<slot />
+				 MAIN
+			</main>
 
-      <footer class="[grid-area:player] h-[80px]">
-				FOOTER
-      </footer>
+			<footer class="[grid-area:player] h-[80px]">FOOTER</footer>
 		</div>
 	</body>
 </html>
@@ -90,5 +90,26 @@ const { title } = Astro.props;
 		font-weight: 900;
 		font-style: normal;
 		font-display: swap;
+	}
+
+	/* Add this CSS to your stylesheet or component */
+	/* Styling for WebKit browsers (e.g., Chrome, Safari) */
+	::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background-color: #2f333b; /* Set your desired color */
+		border-radius: 4px;
+	}
+
+	/* Styling for Firefox */
+	/* Note: Firefox currently only supports styling the thumb, not the track */
+	/* To style the track, you can use background-color on the container with overflow */
+	/* or use a pseudo-element with ::-moz-scrollbartrack */
+	/* This example styles the thumb only */
+	* {
+		scrollbar-color: #2f333b transparent; /* Set your desired color */
+		scrollbar-width: thin;
 	}
 </style>
