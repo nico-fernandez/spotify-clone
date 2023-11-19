@@ -13,6 +13,9 @@
       ],
       "@/lib": [
         "src/lib/*"
+      ],
+      "@/layouts" : [
+        "src/layouts/*"
       ]
     },
     "jsx": "react-jsx",
